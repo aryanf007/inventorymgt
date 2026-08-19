@@ -127,6 +127,25 @@ button {
   font-weight: bold;
 }
 
+/* ===== Summary card (total inventory value) ===== */
+.summary-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1a3a5c;
+  color: white;
+}
+
+.summary-card span:first-child {
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 0.3px;
+}
+
+.summary-card span:last-child {
+  font-size: 22px;
+  font-weight: bold;
+}
 /* ===== Table ===== */
 table {
   width: 100%;
