@@ -116,7 +116,13 @@ productForm.addEventListener("submit", function (e) {
     quantity: Number(quantityInput.value),
     price: Number(priceInput.value),
   };
-
+// ---- Validation: quantity and price cannot be negative ----
+  // Even though the number inputs have min="0", a user could still
+  // bypass that using browser dev tools, so we double-check here too.
+  if (productData.quantity < 0 || productData.price < 0) {
+    alert("Quantity and price cannot be negative. Please enter valid values.");
+    return;
+  }
   // ---- Validation: quantity and price cannot be negative ----
   // Even though the number inputs have min="0", a user could still
   // bypass that using browser dev tools, so we double-check here too.
