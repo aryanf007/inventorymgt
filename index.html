@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Inventory Management System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== Top bar ===== -->
+  <header class="topbar">
+    <h1>📦 Inventory Management System</h1>
+  </header>
+
+  <main class="container">
+
+    <!-- ===== Form to Add / Update a product ===== -->
+    <section class="card">
+      <h2 id="formTitle">Add New Product</h2>
+
+      <form id="productForm">
+        <!-- This hidden field stores the id of the product we are editing.
+             If it's empty, we know we are ADDING a new product. -->
+        <input type="hidden" id="productId" />
+
+        <div class="form-row">
+          <label for="name">Product Name</label>
+          <input type="text" id="name" placeholder="e.g. Wireless Mouse" required />
+        </div>
+
+        <div class="form-row">
+          <label for="category">Category</label>
+          <input type="text" id="category" placeholder="e.g. Electronics" required />
+        </div>
+
+        <div class="form-row">
+          <label for="quantity">Quantity</label>
+          <input type="number" id="quantity" min="0" placeholder="e.g. 10" required />
+        </div>
+
+        <div class="form-row">
+          <label for="price">Price (per unit)</label>
+          <input type="number" id="price" min="0" step="0.01" placeholder="e.g. 250" required />
+        </div>
+
+        <div class="form-buttons">
+          <button type="submit" id="saveBtn">Add Product</button>
+          <button type="button" id="cancelBtn" class="hidden">Cancel</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- ===== Search box ===== -->
+    <section class="card">
+      <input type="text" id="searchBox" placeholder="🔍 Search product by name..." />
+    </section>
+
+    <!-- ===== Summary: total value of everything in stock ===== -->
+    <section class="card summary-card">
+      <span>Total Inventory Value</span>
+      <span id="totalValue">৳0.00</span>
+    </section>
+
+    <!-- ===== Table showing all products ===== -->
+    <section class="card">
+      <h2>Current Stock</h2>
+      <table id="productTable">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Total Value</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="productTableBody">
+          <!-- Rows are added here automatically by JavaScript -->
+        </tbody>
+      </table>
+
+      <p id="emptyMessage" class="hidden">No products yet. Add your first product above.</p>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>Inventory Management System &mdash; Web Programming Assignment</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

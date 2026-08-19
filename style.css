@@ -1,0 +1,218 @@
+/* ===== Basic reset ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #f4f6f8;
+  color: #222;
+  line-height: 1.5;
+}
+
+/* ===== Top bar ===== */
+.topbar {
+  background-color: #1a3a5c;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+/* ===== Page layout ===== */
+.container {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 0 15px;
+}
+
+.card {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card h2 {
+  margin-bottom: 15px;
+  color: #1a3a5c;
+}
+
+/* ===== Form ===== */
+.form-row {
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-row label {
+  font-weight: bold;
+  margin-bottom: 4px;
+  font-size: 14px;
+}
+
+.form-row input {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.form-row input:focus {
+  outline: none;
+  border-color: #1a3a5c;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+#saveBtn {
+  background-color: #1a3a5c;
+  color: white;
+}
+
+#saveBtn:hover {
+  background-color: #14304c;
+}
+
+#cancelBtn {
+  background-color: #ccc;
+  color: #222;
+}
+
+#cancelBtn:hover {
+  background-color: #bbb;
+}
+
+/* ===== Search box ===== */
+#searchBox {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+/* ===== Summary card (total inventory value) ===== */
+.summary-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1a3a5c;
+  color: white;
+}
+
+.summary-card span:first-child {
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 0.3px;
+}
+
+.summary-card span:last-child {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* ===== Table ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th, td {
+  text-align: left;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+
+th {
+  background-color: #e8f0f7;
+  color: #1a3a5c;
+}
+
+tr:hover {
+  background-color: #f9fbfd;
+}
+
+.edit-btn, .delete-btn {
+  padding: 6px 10px;
+  font-size: 13px;
+  margin-right: 5px;
+}
+
+.edit-btn {
+  background-color: #f0ad4e;
+  color: white;
+}
+
+.edit-btn:hover {
+  background-color: #ec971f;
+}
+
+.delete-btn {
+  background-color: #d9534f;
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: #c9302c;
+}
+
+.low-stock {
+  color: #d9534f;
+  font-weight: bold;
+}
+
+.hidden {
+  display: none;
+}
+
+#emptyMessage {
+  text-align: center;
+  color: #888;
+  margin-top: 10px;
+}
+
+/* ===== Footer ===== */
+.footer {
+  text-align: center;
+  padding: 15px;
+  color: #888;
+  font-size: 13px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+  thead {
+    display: none;
+  }
+  td {
+    padding-left: 45%;
+    position: relative;
+  }
+  td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    font-weight: bold;
+  }
+}
